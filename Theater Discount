@@ -1,0 +1,48 @@
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int num=sc.nextInt();
+       char spl=sc.next().charAt(0);
+       char ref=sc.next().charAt(0);
+       char type=sc.next().charAt(0);
+       if(num>=5&&num<=40)
+       {
+        float total=0;
+        if(type=='k')
+        {
+            total=num*75;
+        }
+        else if(type=='q')
+        {
+            total=num*150;
+        }
+        if(total!=0)
+        {
+            if(num>20)
+        {
+            total=total-((total*10)/100);
+        }
+        if(spl=='y')
+        {
+            total=total-((total*2)/100);
+        }
+        if(ref=='y')
+        {
+            total=total+num*50;
+        }
+        System.out.printf("Ticket cost:%.2f",total);
+        }
+        else{
+            System.out.print("Invalid Input");
+        }
+       }
+       else if(num<5 ||num>40){
+        System.out.print("Minimum of 5 and Maximum of 40 tickets");
+       }
+       
+    }
+}
+
