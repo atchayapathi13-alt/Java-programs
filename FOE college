@@ -1,0 +1,35 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        int cse = sc.nextInt();
+        int ece = sc.nextInt();
+        int mech = sc.nextInt();
+
+        if (cse < 0 || ece < 0 || mech < 0) {
+            System.out.println("Input is Invalid");
+        } 
+        else if (cse == ece && ece == mech) {
+            System.out.println("None of the department has got the highest placement");
+        } 
+        else {
+            int max = Math.max(cse, Math.max(ece, mech));
+
+            System.out.println("Highest Placement:");
+
+            if (cse == max) {
+                System.out.println("CSE");
+            }
+            if (ece == max) {
+                System.out.println("ECE");
+            }
+            if (mech == max) {
+                System.out.println("MECH");
+            }
+        }
+
+        sc.close();
+    }
+}
