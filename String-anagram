@@ -1,0 +1,41 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s1 = sc.next();
+        String s2 = sc.next();
+
+        char[] a = s1.toCharArray();
+        char[] b = s2.toCharArray();
+
+        // Sort first array
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < a.length - 1; j++) {
+                if (a[j] > a[j + 1]) {
+                    char temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+
+        // Sort second array
+        for (int i = 0; i < b.length - 1; i++) {
+            for (int j = 0; j < b.length - 1; j++) {
+                if (b[j] > b[j + 1]) {
+                    char temp = b[j];
+                    b[j] = b[j + 1];
+                    b[j + 1] = temp;
+                }
+            }
+        }
+
+        if (String.valueOf(a).equals(String.valueOf(b))) {
+            System.out.println("Strings are anagrams");
+        } else {
+            System.out.println("Strings aren't anagrams");
+        }
+    }
+}
