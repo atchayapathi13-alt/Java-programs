@@ -1,0 +1,24 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String s = sc.next();
+
+        StringBuilder result = new StringBuilder();
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch = s.charAt(i);
+
+            if (i % 2 == 0) {
+                result.append(ch);
+            } else {
+                char prev = s.charAt(i - 1);
+                int shift = ch - '0';
+                result.append((char) (prev + shift));
+            }
+        }
+
+        System.out.println(result.toString());
+    }
+}
