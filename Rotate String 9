@@ -1,0 +1,23 @@
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        String s = sc.nextLine();
+        String goal = sc.nextLine();
+
+        if (s.length() != goal.length()) {
+            System.out.println("false");
+            return;
+        }
+
+        String temp = s + s;
+
+        if (temp.contains(goal)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+}
